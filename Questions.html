@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<title> Autism in Museums</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<link href="Questions.css" type="text/css" rel="stylesheet">
+
+       <section id="title">
+                
+				<h3><font face="myFirstFont" color="#FDFAFA">Questions?</font></h3>
+                </section>
+</head>
+
+<body>
+<div id="wrapper">
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="Tripplanner.html">Trip Planner</a>
+  <a href="Expect.html">What to Expect</a>
+  <a href="Provide.html">What we'll Provide</a>
+  <a href="Questions.html">Questions</a>
+</div>
+
+<span style="font-size:3em;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
+<div style="padding:5%; padding-top:10%; padding-bottom:10%; " id="last">
+ <form action="mailto:jessicanewz@yahoo.co.nz" method="post" enctype="text/plain">
+  
+    
+	  <label for="fname"><font size="5em;" color="#000000;">Name</font></label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+	  <label for="lname"><font size="5em;"color="#000000;">Email</font></label>
+    <input type="text" id="email" name="lastname" placeholder="Example@email.co.nz">
+    
+	  <label for="question"><font size="5em;"color="#000000;">Question</font></label>
+    <input type="text" id="email" name="lastname" placeholder="...?">
+
+	  <label for="country"><font size="5em;"color="#000000;">Country</font></label>
+    <select id="country" name="country">
+      <option value="australia">New Zealand</option>
+      <option value="canada">Australia</option>
+      <option value="usa">USA</option>
+      <option value="usa">England</option>
+      <option value="usa">Samoa</option>
+      <option value="usa">Japan</option>
+      <option value="usa">China</option>
+    </select>
+  
+    <input type="submit" value="Send">
+<input type="reset" value="Reset">
+ 
+  </form>
+</div>
+
+
+<footer>
+<img src="footer.png" alt="footer" height="5%" width="100%">
+</footer>
+
+	</div>
+</body>
+</html>

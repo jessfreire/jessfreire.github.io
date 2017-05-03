@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+<title> Autism in Museums</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<link href="Tripplanner.css" type="text/css" rel="stylesheet">
+ 
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    
+    
+	<script type="text/javascript" src="planner.js"></script>
+       <section id="title">
+                
+				<h3><font face="myFirstFont" color="#FDFAFA">Trip Planner</font></h3>
+                </section>
+                
+             <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+		
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 80%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="Tripplanner.html">Trip Planner</a>
+  <a href="Expect.html">What to Expect</a>
+  <a href="Provide.html">What we'll Provide</a>
+  <a href="Questions.html">Questions</a>
+</div>
+
+<span style="font-size:3em;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
+<div>
+<center>
+	<h1>Floor Map</h1><img class="img2" src="floorplan .png" alt="todo" width="50%" height="50%"  style="float:left; padding-left:10px; padding-top:0px;">
+
+</center>
+<section id="list">
+<a href="map1.html">1st Floor</a><br><br><br><br>
+<a href="map2.html">2nd Floor</a><br><br><br><br>
+<a href="map3.html">3rd Floor</a><br><br><br><br>
+<a href="map4.html">4th Floor</a><br><br><br><br>
+<a href="map5.html">6th Floor</a><br><br>
+	</section>
+
+
+
+</div>
+<section id="aside">
+<h3><font face="myFirstFont" color="#FDFAFA">Are you near Te Papa yet?</font></h3><br>
+	<p><font face="myFirstFont" color="#FDFAFA">Address: </font><div id="address"></div></p>
+
+
+<div id="map" style="margin:2px;"></div>
+	</section>
+   
+   
+    <script>
+     
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 17
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('You Are Here!');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfTFFUmHrjZQcJXLvOX5iX2zHiYqLQBy0&callback=initMap">
+    </script>
+
+
+<script type="text/javascript" charset="utf-8">
+
+     $(document).ready(function() {
+         var currgeocoder;
+
+         //geo location lat and long
+
+         navigator.geolocation.getCurrentPosition(function(position, html5Error) {
+
+             geo_loc = processGeolocationResult(position);
+             currLatLong = geo_loc.split(",");
+             initializeCurrent(currLatLong[0], currLatLong[1]);
+
+        });
+
+        //geo location result
+
+       function processGeolocationResult(position) {
+             html5Lat = position.coords.latitude; //Get latitude
+             html5Lon = position.coords.longitude; //Get longitude
+             html5TimeStamp = position.timestamp; //Get timestamp
+             html5Accuracy = position.coords.accuracy; //Get accuracy in meters
+             return (html5Lat).toFixed(8) + ", " + (html5Lon).toFixed(8);
+       }
+
+        //value 
+
+        function initializeCurrent(latcurr, longcurr) {
+             currgeocoder = new google.maps.Geocoder();
+             console.log(latcurr + "-- ######## --" + longcurr);
+
+             if (latcurr != '' && longcurr != '') {
+                 var myLatlng = new google.maps.LatLng(latcurr, longcurr);
+                 return getCurrentAddress(myLatlng);
+             }
+       }
+
+        //current address
+
+         function getCurrentAddress(location) {
+              currgeocoder.geocode({
+                  'location': location
+
+            }, function(results, status) {
+           
+                if (status == google.maps.GeocoderStatus.OK) {
+                    console.log(results[0]);
+                    $("#address").html(results[0].formatted_address);
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+         }
+    });
+
+    </script>
+
+
+
+
+	</div>
+	
+	
+	
+</body>
+</html>

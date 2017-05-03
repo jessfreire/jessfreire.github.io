@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<title> Autism in Museums</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<link href="Provide.css" type="text/css" rel="stylesheet">
+
+       <section id="title">
+                
+				<h3><font face="myFirstFont" color="#FDFAFA">What We'll Provide</font></h3>
+                </section>
+</head>
+
+<body>
+<div id="wrapper">
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="Tripplanner.html">Trip Planner</a>
+  <a href="Expect.html">What to Expect</a>
+  <a href="Provide.html">What we'll Provide</a>
+  <a href="Questions.html">Questions</a>
+ 
+</div>
+
+<span style="font-size:3em;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+<div style="padding:3%; background-color:#8f1730; margin:auto; ">
+<center>
+<img src="beep.png" alt="beep" height="23%" width="23%" style="display:inline; float:inherit; ">
+<img src="mapp.png" alt="mapp" height="23%" width="23%" style="display:inline; float:inherit; ">
+<img src="water.png" alt="water" height="23%" width="23%" style="display:inline; float:inherit; ">
+<img src="headphone.png" alt="headphone" height="23%" width="23%" style="display:inline; float:inherit; ">
+</center>
+</div>
+
+<div>
+<p style="padding:3%; background-color:#8f1730; margin:0px;" ><font face="myFirstFont" color="#FDFCFC">
+While you and your family are visiting us at the museum we want you to feel as comfortable and welcomed as possible. That is why we have created a sensory pack with items that will help your child feel comfortable here. The bag includes sensory headphones, that can help if your child is feeling too over-whelmed with loud noises, a water bottle, a map and finally a beeper that you can use if anything serious happens and you need assistance, use it and someone from our staff will approach you and over help. <br><br></font></p></div>
+
+
+<footer>
+<img src="footer.png" alt="footer" height="5%" width="100%">
+</footer>
+
+
+
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+	</div>
+</body>
+</html>

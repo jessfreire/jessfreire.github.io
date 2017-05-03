@@ -1,0 +1,159 @@
+* { margin: 0; padding: 0; }
+html { overflow-y: scroll;}
+body { background:#8f1730; font-size: 13px; color:rgba(255,254,254,1.00); background-image:; background-position: center top;
+  background-size: cover;}
+ol, ul { list-style: none; margin: 0;}
+ul li { margin: 0; padding: 0;}
+h1 { margin-bottom: 10px; color: #111111;}	
+a, img { outline: none; border:none; color: #000; font-weight: bold; text-transform: uppercase;}
+p { margin: 0 0 10px; line-height: 1.4em; font-size: 1.2em;}
+img { display: block; margin-bottom: 10px;}
+aside {  font-size: 0.9em;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { 
+    display: block;
+	}
+	
+/* Structure */
+#wrapper {
+	width: 96%;	
+	height:96%;
+	max-width: 1000px;
+	margin: auto;
+	padding: 2%;
+	
+	} 
+
+
+
+	#main {
+		width: 100%;
+		float: left;
+		padding-top:2%;
+		padding-bottom:2%;
+		padding-left:0.5%;
+		margin-top:2%;
+		margin-bottom:2%;
+		background:#dcdce6;
+		
+		}		
+	
+	
+		
+	#title {
+		width: 100%;
+		text-align: center;
+		
+		font-size:3em;
+		margin:0%;
+		padding-top: 10%;
+		padding-bottom: 10%;
+		background-image:url(background.jpg);
+		background-size:cover;
+		border-bottom:rgba(251,247,247,1.00) 15px solid;
+		/*text-decoration: underline;
+		text-decoration-color: black;*/
+		}
+	
+		
+/* Nav */
+	header nav li {
+			margin-top: 2.5%;
+			margin-left:2.5%;
+			margin-right:2.5%;
+				
+			border-radius: 25px;
+			background-color: #c03451;
+			display: block;
+			
+			}
+			header nav a {
+				border-radius: 25px;
+				display: block;
+				padding: 2%;
+				text-align: center;
+				font-size:1.5em;
+				font-color:rgba(251,247,247,1.00);
+				}	
+
+
+/* Banner */			
+#banner {
+	float: left;
+	margin-bottom: 15px;
+	width: 100%;
+	}
+
+	#banner img {
+		width: 100%;
+		}
+		
+.footer{
+background-color:#003366;
+background-image:url(background.jpg);
+margin:0;
+padding:0;
+width:90vw;
+height:22.5vh;
+float:right;
+overflow:auto;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/*NAV DONE*/
+
+@media screen and (min-width: 1200px) {
+
+	
+	#title, #main, #wrapper {
+		
+		margin: auto; 
+		width: 50%;
+		}	
+		header nav li {
+			margin: 0;
+			
+			display: block;
+			margin-bottom: 5%;
+			}
+			header nav a {
+				display: block;
+				padding: 10px;
+				text-align: center;
+				}	
+			
+}
+
+@font-face {
+   font-family: myFirstFont;
+   src: url(Monitorica-Rg.otf);
+}
+
+div {
+   font-family: myFirstFont;
+}
+
+@font-face {
+   font-family: my2Font;
+   src: url(Segan-Light.ttf);
+}
+
+div {
+   font-family: my2Font;
+}
+
+@font-face {
+   font-family: my3Font;
+   src: url(Modeka.otf);
+}
+
+div {
+   font-family: my3Font;
+}
+
